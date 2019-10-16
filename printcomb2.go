@@ -16,8 +16,10 @@ func PrintComb2() {
 					z01.PrintRune(' ')
 
 				}
+				d = '0'
 			}
 		}
 	}
-	z01.PrintRune(10)
+	
 }
+z01.PrintRune(10)
