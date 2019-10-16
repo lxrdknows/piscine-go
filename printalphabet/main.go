@@ -1,14 +1,13 @@
 package main
+import "github.com/01-edu/z01"
 
-import (
-	"fmt"
-)
 
 func main() {
-
-	for start := byte('a'); start <= byte('z'); start++ {
-		fmt.Print(string(start) + "")
+	var a = 'a'
+	for a <= 'z' {
+		z01.PrintRune(rune(a))
+		a++
 	}
 
-	fmt.Println()
+	z01.PrintRune('\n')
 }
