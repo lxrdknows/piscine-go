@@ -11,7 +11,7 @@ func PrintComb() {
 					z01.PrintRune(',')
 					z01.PrintRune(' ')
 				}
-				next := true
+				next = true
 				z01.PrintRune(a)
 				z01.PrintRune(b)
 				z01.PrintRune(c)
