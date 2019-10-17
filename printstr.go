@@ -1,13 +1,15 @@
 package piscine
 
-import "github.com/01-edu/z01"
+func StrLen(str string) int {
 
-func PrintStr(str string) {
+	nub := 0
+	for _, i := range str {
 
-	strNub := []rune(str)
-	for i := range strNub {
-		z01.PrintRune(strNub[i])
+		if i == i {
+			nub++
+		}
 
 	}
+	return nub
 
 }
