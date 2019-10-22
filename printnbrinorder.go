@@ -4,36 +4,53 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func recursion(n int) {
-	if n == 0 {
-		return
+func recursiveInttoRune(v int, r *[]rune) { //parse int to rune's slice
+	c := '0'
+	for i := 1; i <= v%10; i++ {
+		c++
 	}
-	remainder := n % 10
-	runeX := '0'
-	for i := 0; i < remainder; i++ {
-		runeX++
+	if v/10 != 0 {
+		recursiveInttoRune(v/10, r)
 	}
-	recursion(n / 10)
-	z01.PrintRune(runeX)
+	*r = append(*r, c)
+	return
+}
+
+func SwapRune(a *rune, b *rune) {
+	c := *b
+	*b = *a
+	*a = c
+}
+
+func sort(r []rune) {
+	temp := r
+	n := 0
+	for range r {
+		n++
+	}
+	for i := 0; i < n; i++ {
+		for j := n - 1; j > i; j-- {
+			if temp[j] < temp[j-1] {
+				SwapRune(&temp[j], &temp[j-1])
+			}
+		}
+	}
+}
+
+func PrintRuneSliceNnr(n []rune) {
+	a := 0
+	for index := range n {
+		a = index
+	}
+	for i := 0; i <= a; i++ {
+		z01.PrintRune(n[i])
+	}
 
 }
 
-func PrintNbr(n int) {
-	if n == -9223372036854775808 {
-		runes := [20]rune{'-', '9', '2', '2', '3', '3', '7', '2', '0', '3', '6', '8', '5', '4', '7', '7', '5', '8', '0', '8'}
-		for _, runeZ := range runes {
-			z01.PrintRune(runeZ)
-		}
-		return
-	}
-	if n == 0 {
-		z01.PrintRune('0')
-		return
-	} else if n < 0 {
-		z01.PrintRune('-')
-		n = n * (-1)
-	}
-
-	recursion(n)
-
+func PrintNbrInOrder(n int) {
+	r := []rune{}
+	recursiveInttoRune(n, &r)
+	sort(r)
+	PrintRuneSliceNnr(r)
 }
