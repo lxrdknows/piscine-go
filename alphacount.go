@@ -14,9 +14,9 @@ func AlphaCount(str string) int {
 		}
 		
 		}
-		return counter
+		
 	}
 	
-
+	return counter
 }
 
