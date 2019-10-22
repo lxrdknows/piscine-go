@@ -1,26 +1,28 @@
 package piscine
 
 func TrimAtoi(s string) int {
-	bool1 := false // not negative
-	arrayStr := []rune(s)
-	n := 0 // lenght
-	for range arrayStr {
-		n++
-	}
-	if n != 0 && arrayStr[0] == '-' { //if real negative, set negative
-		bool1 = true
-	}
-	ans := 0
-	for i := 0; i < n; i++ {
-		if arrayStr[i] >= '0' && arrayStr[i] <= '9' {
-			ans *= 10
-			ans += intfor(arrayStr[i])
-		} else if arrayStr[i] == '-' && ans == 0 {
-			bool1 = true
+
+	var x int
+	letter := 'a'
+	sign := 1
+	isNumberMet := false
+	for index := range s {
+
+		letter = rune(s[index])
+		if letter == '-' && !isNumberMet {
+			sign = sign * (-1)
+			continue
+		} else if letter < '0' || letter > '9' {
+			continue
+		} else {
+			isNumberMet = true
+			numb := 0
+			for i := '0'; i < letter; i++ {
+				numb++
+			}
+			x = x*10 + (numb)
 		}
+
 	}
-	if bool1 == true {
-		ans = ans * -1
-	}
-	return ans
+	return x * sign
 }
