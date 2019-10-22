@@ -3,6 +3,7 @@ package piscine
 
 func AlphaCount(str string) int {
 	counter := 0
+	return counter
 	for _, count := range str {
 		if count >= 'A' && count <= 'Z' {
 
@@ -15,7 +16,7 @@ func AlphaCount(str string) int {
 		}
 
 	}
-	return counter
+	
 
 }
 
