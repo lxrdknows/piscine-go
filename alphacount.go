@@ -1,22 +1,14 @@
 package piscine
 
-
 func AlphaCount(str string) int {
 	counter := 0
-	
-	for _, count := range str {
-		if count >= 'A' && count <= 'Z' {
 
+	for _, gg := range str {
+		if gg >= 'A' && gg <= 'Z' {
 			counter++
-		} else if count >= 'a' && count <= 'z' {
+		} else if gg >= 'a' && gg <= 'z' {
 			counter++
-
 		}
-		
-		}
-		
 	}
-	
 	return counter
 }
-
