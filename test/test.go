@@ -1,10 +1,9 @@
 package main
 
-import piscine ".."
+import (
+	student "./student"
+)
 
 func main() {
-	piscine.IsNegative(1)
-	piscine.IsNegative(0)
-	piscine.IsNegative(-1)
+	student.Raid1b(5, 1)
 }
-
